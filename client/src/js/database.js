@@ -12,9 +12,9 @@ const initdb = async () =>
     },
   });
 
-// Method that accepts some content and PUTs it to the database
+// Logic for Method that accepts some content and PUTs it to the database
 export const putDb = async (content) => {
-  console.error("putDb not implemented");
+  console.log("POST data to the database");
   // Open a connection to the 'jate' database with value 1
   const jateDb = await openDB("jate", 1);
 
@@ -32,7 +32,26 @@ export const putDb = async (content) => {
   console.log("successfully saved data to database", result);
 };
 
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error("getDb not implemented");
+// Logic for method that GETs all the content from the database
+export const getDb = async () => {
+  console.log("GET request from database");
 
+  // Open a connection to the 'jate' database
+  const jateDb = await openDB("jate", 1);
+
+  // Start a read-only transaction on the 'jate' object store
+  const tx = jateDb.transaction("jate", "readonly");
+
+  // Get the object store
+  const store = tx.objectStore("jate");
+
+  // Use the .get() method to retrieve data from the object store based on the id
+  const request = store.get(1);
+
+  // Wait for the request to complete and return the value
+  const result = await request;
+  return result.value;
+};
+
+// Initialize the database when the module is loaded
 initdb();
