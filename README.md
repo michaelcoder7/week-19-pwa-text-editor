@@ -53,6 +53,8 @@ Necessary extra files created and linked together for functionality<br>
 
 ![Screenshot of jate text editor showing installability using Lighthouse](https://github.com/michaelcoder7/week-19-pwa-text-editor/assets/128432461/6599288c-0312-4587-8dba-8f09f8a725b2)
 
+![Screenshot of jate text editor showing service workers](https://github.com/michaelcoder7/week-19-pwa-text-editor/assets/128432461/73a8b05a-18d3-48fe-9749-05e6c2899d5d)
+
 ## Link to Deployed Application
 
 https://text-editor-app-jate-395b3ecec249.herokuapp.com/
